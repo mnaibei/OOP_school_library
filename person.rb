@@ -1,6 +1,9 @@
-class Person
+require './nameable'
+
+class Person < Nameable
   # constructor
   def initialize(age, name = 'unknown', parent_permission: true)
+    super()
     # instance variables
     @id = Random.rand(1..1000)
     @name = name
@@ -13,6 +16,10 @@ class Person
 
   def can_use_services?
     of_age? || parent_permission
+  end
+
+  def correct_name
+    @name
   end
   #   private function
 
