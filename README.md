@@ -59,7 +59,7 @@ Example commands:
 ```sh
 
   git clone git@github.com:mnaibei/OOP_school_library.git
-  cd vet_clinic
+  cd OOP_school_library
 
 
 ```
