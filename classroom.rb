@@ -5,4 +5,9 @@ class Classroom
     @label = label
     @students = [] # Initialize an empty array to store the students associated with the classroom
   end
+
+  def add_student(student)
+    @students << student
+    student.classroom = self
+  end
 end
