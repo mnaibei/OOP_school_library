@@ -2,7 +2,7 @@ require_relative './nameable'
 
 class Person < Nameable
   # constructor
-  def initialize(age, name = 'unknown', parent_permission: true)
+  def initialize(age, parent_permission, name = 'unknown')
     super()
     # instance variables
     @id = Random.rand(1..1000)
@@ -12,11 +12,13 @@ class Person < Nameable
     @rentals = []
   end
   #  getters
-  attr_reader :id
-  attr_accessor :name, :age, :rentals
+  attr_reader :id, :parent_permission, :rentals
+  attr_accessor :name, :age
 
   def can_use_services?
-    of_age? || parent_permission
+    return true if of_age?
+
+    false
   end
 
   def correct_name
@@ -32,6 +34,8 @@ class Person < Nameable
   private
 
   def of_age?
-    age >= 18
+    return true if @age >= 18
+
+    false
   end
 end
