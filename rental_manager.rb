@@ -1,4 +1,5 @@
 require_relative 'rental'
+require_relative 'app'
 
 class RentalManager
   attr_reader :rentals
@@ -15,7 +16,7 @@ class RentalManager
 
     @books.each_with_index { |book, index| puts "(#{index}) Title: #{book.title}, Author: #{book.author}" }
     puts ''
-    book_num = gets.chomp.to_i
+    book_num = App.new.user_input_to_i
     puts ''
 
     puts 'Select a person from below by number: '
@@ -23,11 +24,11 @@ class RentalManager
       puts "(#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
     puts ''
-    person_num = gets.chomp.to_i
+    person_num = App.new.user_input_to_i
     puts ''
 
     print 'Date(yyyy/mm/dd): '
-    date = gets.chomp
+    date = App.new.user_input
 
     rental = Rental.new(date, @books[book_num], @people[person_num])
     @rentals << rental
@@ -44,7 +45,7 @@ class RentalManager
     puts ''
 
     print 'Please select an ID to show more details: '
-    id = gets.chomp.to_i
+    id = App.new.user_input_to_i
     puts ''
 
     puts 'Rental(s) for this ID: '

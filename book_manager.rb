@@ -1,4 +1,5 @@
 require_relative 'book'
+require_relative 'app'
 
 class BookManager
   attr_reader :books
@@ -10,9 +11,9 @@ class BookManager
   def create_book
     puts ''
     print 'Enter book title: '
-    title = gets.chomp
+    title = App.new.user_input
     print 'Enter book author: '
-    author = gets.chomp
+    author = App.new.user_input
     @books << Book.new(title, author)
     puts 'Success'
   end

@@ -1,6 +1,7 @@
 require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
+require_relative 'app'
 
 class PersonManager
   attr_reader :people
@@ -12,22 +13,22 @@ class PersonManager
   def create_person
     puts ''
     print 'Enter 1 to add Student and 2 to add Teacher: '
-    selection = gets.chomp.to_i
+    selection = App.new.user_input_to_i
     print 'Enter name: '
-    name = gets.chomp
+    name = App.new.user_input
     print 'Enter age: '
-    age = gets.chomp.to_i
+    age = App.new.user_input_to_i
 
     case selection
     when 1
       print 'Does student have parent permission [Y/N]: '
-      permission = gets.chomp.downcase == 'y'
+      permission = App.new.user_permission
       student = Student.new(1, age, permission, name)
       @people << student
 
     when 2
       print 'What is the teacher\'s specialization: '
-      specialization = gets.chomp
+      specialization = App.new.user_input
       teacher = Teacher.new(age, specialization, name)
       @people << teacher
     end
