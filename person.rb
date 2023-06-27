@@ -29,6 +29,19 @@ class Person < Nameable
     Rental.new(date, book, self)
   end
 
+  def to_json(*_args)
+    {
+      'name' => @name,
+      'age' => @age,
+      'parent_permission' => @parent_permission
+    }.to_json
+  end
+
+  def self.from_json(json)
+    data = JSON.parse(json)
+    Person.new(data['age'], data['parent_permission'], data['name'])
+  end
+
   #   private function
 
   private

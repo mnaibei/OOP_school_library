@@ -104,6 +104,12 @@ rubocop -A
 - Twitter: [MNaibei\_](https://twitter.com/mnaibei_)
 - LinkedIn: [Mucha Julius](https://linkedin.com/in/mucha-julius)
 
+👤 **Mussie Kahsay**
+
+- GitHub: [@MussieTeka](https://github.com/MussieTeka)
+- Twitter: [@MussieTeka](https://twitter.com/mussieteka)
+- LinkedIn: [@MussieTeka](https://linkedin.com/in/mussieteka)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->

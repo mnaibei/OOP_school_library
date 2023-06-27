@@ -1,12 +1,14 @@
 require_relative 'book_manager'
 require_relative 'person_manager'
 require_relative 'rental_manager'
+require_relative 'preserve_data'
 
 class App
   def initialize
     @book_manager = BookManager.new
     @person_manager = PersonManager.new
     @rental_manager = RentalManager.new(@book_manager.books, @person_manager.people)
+    @preserve_data = PreserveData.new(@book_manager.books, @person_manager.people, @rental_manager.rentals)
   end
 
   def list_options
@@ -57,9 +59,12 @@ class App
   def run
     puts "Welcome to the School Library App!\n\n"
 
+    @preserve_data.load_data
+
     loop do
       puts list_options
       option = gets.chomp.to_i
+      @preserve_data.save_data
       options(option)
     end
   end
