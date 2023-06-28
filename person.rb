@@ -1,17 +1,14 @@
 require_relative 'nameable'
 
 class Person < Nameable
-  # constructor
   def initialize(age, parent_permission, name = 'unknown')
     super()
-    # instance variables
     @id = Random.rand(1..1000)
     @name = name
     @age = age
     @parent_permission = parent_permission
     @rentals = []
   end
-  #  getters
   attr_reader :id, :parent_permission, :rentals
   attr_accessor :name, :age
 
@@ -41,8 +38,6 @@ class Person < Nameable
     data = JSON.parse(json)
     Person.new(data['age'], data['parent_permission'], data['name'])
   end
-
-  #   private function
 
   private
 

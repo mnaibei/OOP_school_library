@@ -2,7 +2,6 @@ class Book
   attr_accessor :title, :author, :rentals
 
   def initialize(title, author)
-    # @title and @author instance variables
     @title = title
     @author = author
     @rentals = []
