@@ -13,14 +13,3 @@ RSpec.describe BaseDecorator do
     end
   end
 end
-
-# require_relative '../base_decorator'
-
-# RSpec.describe BaseDecorator do
-#     describe '#correct_name' do
-#         it 'returns the correct name' do
-#         decorator = BaseDecorator.new('john')
-#         expect(decorator.correct_name).to eq('john')
-#         end
-#     end
-#     end

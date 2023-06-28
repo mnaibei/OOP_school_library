@@ -13,12 +13,3 @@ RSpec.describe CapitalizeDecorator do
     end
   end
 end
-
-# RSpec.describe CapitalizeDecorator do
-#     describe '#correct_name' do
-#       it 'returns the correct name' do
-#         decorator = CapitalizeDecorator.new('john')
-#         expect(decorator.correct_name).to eq('John')
-#       end
-#     end
-#   end
