@@ -14,11 +14,6 @@ RSpec.describe BaseDecorator do
   end
 end
 
-
-
-
-
-
 # require_relative '../base_decorator'
 
 # RSpec.describe BaseDecorator do
